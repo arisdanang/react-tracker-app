@@ -15,7 +15,11 @@ export default function BudgetCard({
 	const percent = (amount / max) * 100;
 
 	return (
-		<div className="mt-6 mr-6 border-2 rounded-lg border-gray py-4 px-5 shadow-lg bg-slate-100">
+		<div
+			className={`mt-6 mr-6 border-2 rounded-lg border-gray py-4 px-5 shadow-lg ${
+				gray && "bg-slate-100"
+			}`}
+		>
 			<div className="flex flex-wrap justify-between">
 				<h1 className="font-normal text-2xl mr-3">{name}</h1>
 				<h1 className="font-normal text-2xl">

@@ -35,7 +35,7 @@ function App() {
 					handleAddBudgetModal={() => setShowAddBudgetModal(true)}
 					handleAddExpenseModal={() => setShowAddExpenseModal(true)}
 				/>
-				<div className="grid gap-2  sm:grid-cols-2 lg:grid-cols-3 ">
+				<div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 ">
 					{budgets.map((budget) => {
 						const amount = getBudgetExpenses(budget.id).reduce(
 							(total, expense) => total + expense.amount,
