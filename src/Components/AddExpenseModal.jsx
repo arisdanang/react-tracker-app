@@ -62,7 +62,7 @@ export default function AddExpenseModal({
 							<input
 								ref={descriptionRef}
 								type="text"
-								className="mb-3 sm:px-4 py-2 border-2 border-sky-400 rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
 							/>
 							<label htmlFor="amount" className="text-sm sm:text-base mb-2">
 								Amount
@@ -70,7 +70,7 @@ export default function AddExpenseModal({
 							<input
 								ref={amountRef}
 								type="number"
-								className="mb-3 sm:px-4 py-2 border-2 border-sky-400 rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
 								step="100"
 							/>
 							<label htmlFor="name" className="text-sm sm:text-base mb-2">
@@ -81,7 +81,7 @@ export default function AddExpenseModal({
 								ref={budgetIdRef}
 								name="categories"
 								id=""
-								className="mb-3 sm:px-4 py-2 border-2 border-sky-400 rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
 							>
 								<option id="Uncategorized">Uncategorized</option>
 								{budgets.map((budget) => (
@@ -94,13 +94,13 @@ export default function AddExpenseModal({
 								<button
 									type="button"
 									onClick={handleClose}
-									className="px-4 py-2 my-4 mr-3 text-sky-400 border-sky-400 border-2 rounded-lg text-sm font-normal shadow-lg cursor-pointer"
+									className="px-4 py-2 my-4 mr-3 text-primary border-primary border-2 rounded-lg text-sm font-normal shadow-lg cursor-pointer"
 								>
 									Cancel
 								</button>
 								<button
 									type="submit"
-									className="px-4 py-2 my-4  bg-sky-400 border-2 rounded-lg text-white font-normal text-sm shadow-lg cursor-pointer"
+									className="px-4 py-2 my-4  bg-primary border-2 rounded-lg text-white font-normal text-sm shadow-lg cursor-pointer"
 								>
 									Add
 								</button>

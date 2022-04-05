@@ -47,7 +47,7 @@ export default function AddBudgetModal({ show, handleClose }) {
 							<input
 								ref={nameRef}
 								type="text"
-								className="mb-3 sm:px-4 py-2 border-2 border-sky-400 rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
 							/>
 							<label htmlFor="name" className="text-sm sm:text-base">
 								Max Expense
@@ -55,20 +55,20 @@ export default function AddBudgetModal({ show, handleClose }) {
 							<input
 								ref={maxRef}
 								type="number"
-								className="mb-3 sm:px-4 py-2 border-2 border-sky-400 rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
 								step={100}
 							/>
 							<div className="flex justify-end">
 								<button
 									onClick={handleClose}
 									type="button"
-									className="my-4 px-4 py-2 mr-3 text-sky-400 border-sky-400 border-2 rounded-lg text-sm sm:text-base font-normal shadow-lg cursor-pointer"
+									className="my-4 px-4 py-2 mr-3 text-primary border-primary border-2 rounded-lg text-sm sm:text-base font-normal shadow-lg cursor-pointer"
 								>
 									Cancel
 								</button>
 								<button
 									type="submit"
-									className="my-4 px-4 py-2 bg-sky-400 rounded-lg text-sm sm:text-base text-white font-normal shadow-lg cursor-pointer"
+									className="my-4 px-4 py-2 bg-primary rounded-lg text-sm sm:text-base text-white font-normal shadow-lg cursor-pointer"
 								>
 									Add
 								</button>
