@@ -16,7 +16,7 @@ export default function BudgetCard({
 
 	return (
 		<div
-			className={`mt-6 mr-6 border-2 rounded-lg border-gray py-4 px-5 shadow-lg ${
+			className={`mt-6 mr-6 border-2 rounded-md  border-black py-4 px-5 shadow-[8px_8px_0px_0px_rgb(34,34,34)] ${
 				gray && "bg-slate-100"
 			}`}
 		>
@@ -38,15 +38,23 @@ export default function BudgetCard({
 				<div className="flex justify-end flex-row">
 					<button
 						onClick={onAddExpenseClick}
-						className="py-2 px-4 border-2 border-primary rounded-lg text-primary hover:text-white hover:bg-primary mr-2 sm:mr-3 font-normal text-sm sm:text-base"
+						className="relative px-4 py-2 group mr-2"
 					>
-						Add Expense
+						<span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-active:-translate-x-0 group-active:-translate-y-0"></span>
+						<span className="absolute inset-0 w-full h-full bg-dark-blue border-2 border-black group-active:bg-dark-blue"></span>
+						<span className="relative text-black group-active:text-black">
+							Add Expense
+						</span>
 					</button>
 					<button
 						onClick={onViewExpensesClick}
-						className="py-2 px-4 text-dark rounded-lg border-dark hover:text-white hover:bg-dark border-2 font-normal text-sm sm:text-base"
+						className="relative px-4 py-2 group"
 					>
-						View Expenses
+						<span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-active:-translate-x-0 group-active:-translate-y-0"></span>
+						<span className="absolute inset-0 w-full h-full bg-green border-2 border-black group-active:bg-green"></span>
+						<span className="relative text-black group-active:text-black">
+							View Expenses
+						</span>
 					</button>
 				</div>
 			)}

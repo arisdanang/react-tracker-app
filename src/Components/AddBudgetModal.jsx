@@ -47,7 +47,8 @@ export default function AddBudgetModal({ show, handleClose }) {
 							<input
 								ref={nameRef}
 								type="text"
-								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-black rounded min-w-full"
+								required
 							/>
 							<label htmlFor="name" className="text-sm sm:text-base">
 								Max Expense
@@ -55,22 +56,28 @@ export default function AddBudgetModal({ show, handleClose }) {
 							<input
 								ref={maxRef}
 								type="number"
-								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-black rounded min-w-full"
+								required
 								step={100}
 							/>
 							<div className="flex justify-end">
 								<button
 									onClick={handleClose}
 									type="button"
-									className="my-4 px-4 py-2 mr-3 text-primary border-primary border-2 rounded-lg text-sm sm:text-base font-normal shadow-lg cursor-pointer"
+									className="relative px-4 py-2 group mr-2"
 								>
-									Cancel
+									<span className="absolute inset-0 w-full h-full  transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-active:-translate-x-0 group-active:-translate-y-0"></span>
+									<span className="absolute inset-0 w-full h-full bg-rose border-2 border-black group-active:bg-rose"></span>
+									<span className="relative text-black group-active:text-black">
+										Cancel
+									</span>
 								</button>
-								<button
-									type="submit"
-									className="my-4 px-4 py-2 bg-primary rounded-lg text-sm sm:text-base text-white font-normal shadow-lg cursor-pointer"
-								>
-									Add
+								<button type="submit" className="relative px-4 py-2 group">
+									<span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-active:-translate-x-0 group-active:-translate-y-0"></span>
+									<span className="absolute inset-0 w-full h-full bg-green border-2 border-black group-active:bg-green"></span>
+									<span className="relative text-black group-active:text-black">
+										Add
+									</span>
 								</button>
 							</div>
 						</form>

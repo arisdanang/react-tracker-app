@@ -40,9 +40,13 @@ export default function ViewExpensesModal({ budgetId, handleClose, show }) {
 											deleteBudget(budget);
 											handleClose();
 										}}
-										className="px-2 py-1.5 mx-3  bg-white border-2 border-red-600 rounded-lg text-red-600 hover:text-white hover:bg-red-600 font-normal text-base shadow-lg cursor-pointer"
+										className="ml-2 relative px-4 py-2 group"
 									>
-										Delete
+										<span className="absolute inset-0 w-full h-full  transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-active:-translate-x-0 group-active:-translate-y-0"></span>
+										<span className="absolute inset-0 w-full h-full bg-rose border-2 border-black group-active:bg-rose"></span>
+										<span className="relative text-black group-active:text-black">
+											Delete
+										</span>
 									</button>
 								)}
 							</div>
@@ -66,9 +70,13 @@ export default function ViewExpensesModal({ budgetId, handleClose, show }) {
 									</h1>
 									<button
 										onClick={() => deleteExpense(expense)}
-										className=" ml-4 px-1.5 text-xl font-normal text-red-500 border-2 rounded-lg border-red-500 hover:bg-red-500 hover:text-white"
+										className="ml-2 relative px-3 py-2 group"
 									>
-										&times;
+										<span className="absolute inset-0 w-full h-full  transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-active:-translate-x-0 group-active:-translate-y-0"></span>
+										<span className="absolute inset-0 w-full h-full bg-rose border-2 border-black group-active:bg-rose"></span>
+										<span className="relative text-black group-active:text-black">
+											&times;
+										</span>
 									</button>
 								</div>
 							</div>

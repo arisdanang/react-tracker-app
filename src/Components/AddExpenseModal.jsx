@@ -62,7 +62,8 @@ export default function AddExpenseModal({
 							<input
 								ref={descriptionRef}
 								type="text"
-								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-black rounded min-w-full"
+								required
 							/>
 							<label htmlFor="amount" className="text-sm sm:text-base mb-2">
 								Amount
@@ -70,8 +71,9 @@ export default function AddExpenseModal({
 							<input
 								ref={amountRef}
 								type="number"
-								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-black rounded min-w-full"
 								step="100"
+								required
 							/>
 							<label htmlFor="name" className="text-sm sm:text-base mb-2">
 								Budget
@@ -81,7 +83,7 @@ export default function AddExpenseModal({
 								ref={budgetIdRef}
 								name="categories"
 								id=""
-								className="mb-3 sm:px-4 py-2 border-2 border-primary rounded min-w-full"
+								className="mb-3 sm:px-4 py-2 border-2 border-black rounded min-w-full"
 							>
 								<option id="Uncategorized">Uncategorized</option>
 								{budgets.map((budget) => (
@@ -94,15 +96,20 @@ export default function AddExpenseModal({
 								<button
 									type="button"
 									onClick={handleClose}
-									className="px-4 py-2 my-4 mr-3 text-primary border-primary border-2 rounded-lg text-sm font-normal shadow-lg cursor-pointer"
+									className="relative px-4 py-2 group mr-2"
 								>
-									Cancel
+									<span className="absolute inset-0 w-full h-full  transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-active:-translate-x-0 group-active:-translate-y-0"></span>
+									<span className="absolute inset-0 w-full h-full bg-rose border-2 border-black group-active:bg-rose"></span>
+									<span className="relative text-black group-active:text-black">
+										Cancel
+									</span>
 								</button>
-								<button
-									type="submit"
-									className="px-4 py-2 my-4  bg-primary border-2 rounded-lg text-white font-normal text-sm shadow-lg cursor-pointer"
-								>
-									Add
+								<button type="submit" className="relative px-4 py-2 group">
+									<span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-active:-translate-x-0 group-active:-translate-y-0"></span>
+									<span className="absolute inset-0 w-full h-full bg-green border-2 border-black group-active:bg-green"></span>
+									<span className="relative text-black group-active:text-white">
+										Add
+									</span>
 								</button>
 							</div>
 						</form>

@@ -4,7 +4,7 @@ export default function ProgressBar({ width, variant }) {
 		<div className="my-3 w-full rounded-lg bg-gray-200 h-3">
 			<div
 				style={widthBar}
-				className={`rounded-lg ${variant} h-3`}
+				className={`border border-black rounded-lg ${variant} h-3`}
 				// className="rounded-lg  h-3"
 			></div>
 		</div>
