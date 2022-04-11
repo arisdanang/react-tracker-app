@@ -16,7 +16,7 @@ export default function BudgetCard({
 
 	return (
 		<div
-			className={`mt-6 mr-6 border-2 rounded-md  border-black py-4 px-5 shadow-[8px_8px_0px_0px_rgb(34,34,34)] ${
+			className={`mt-6 sm:mr-6 border-2 rounded-md border-black py-4 px-5 shadow-[8px_8px_0px_0px_rgb(34,34,34)] ${
 				gray && "bg-slate-100"
 			}`}
 		>
