@@ -5,17 +5,22 @@ import { Dialog, Transition } from "@headlessui/react";
 export default function AddBudgetModal({ show, handleClose }) {
 	const nameRef = useRef();
 	const maxRef = useRef();
-	const { addBudget } = useBudgets();
+	const { addBudget, budgets } = useBudgets();
 
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		addBudget({
-			name: nameRef.current.value,
-			max: parseFloat(maxRef.current.value),
+		budgets.map((budget) => {
+			if (nameRef.current.value === budget.name) {
+				alert(`budget ${nameRef.current.value} already exist`);
+			} else {
+				addBudget({
+					name: nameRef.current.value,
+					max: parseFloat(maxRef.current.value),
+				});
+				handleClose();
+			}
 		});
-
-		handleClose();
 	}
 
 	return (
