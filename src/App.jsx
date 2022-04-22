@@ -16,7 +16,6 @@ function App() {
 	const [addExpenseBudgetId, setAddExpenseBudgetId] = useState();
 	const [viewExpenesModalBudgetId, setViewExpensesModalBudgetId] = useState();
 	const { budgets, getBudgetExpenses } = useBudgets();
-	console.log(budgets);
 
 	function openAddExpenseModal(budgetId) {
 		setShowAddExpenseModal(true);
@@ -41,7 +40,7 @@ function App() {
 							(total, expense) => total + expense.amount,
 							0
 						);
-						console.log(budget);
+
 						return (
 							<BudgetCard
 								name={budget.name}
