@@ -9,7 +9,6 @@ export default function UncategorizedBudgetCard(props) {
 	);
 
 	if (amount === 0) return null;
-	console.log(props);
 	return (
 		<BudgetCard amount={amount} gray name="Uncategorized" buttons {...props} />
 	);
