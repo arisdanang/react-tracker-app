@@ -24,7 +24,6 @@ export default function AddExpenseModal({
 		handleClose();
 	}
 
-	console.log(defaultBudgetId);
 	return (
 		<Transition
 			show={show}

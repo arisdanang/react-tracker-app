@@ -2,25 +2,27 @@ import { useRef, useState } from "react";
 import { useBudgets } from "../contexts/BudgetContext";
 import { Dialog, Transition } from "@headlessui/react";
 
-export default function AddBudgetModal({ show, handleClose }) {
+export default function AddBudgetModal({ show, handleClose, textWarning }) {
 	const nameRef = useRef();
 	const maxRef = useRef();
 	const { addBudget, budgets } = useBudgets();
+	const [showWarning, setShowWarning] = useState(false);
 
 	function handleSubmit(e) {
 		e.preventDefault();
-
 		budgets.map((budget) => {
 			if (nameRef.current.value === budget.name) {
 				alert(`budget ${nameRef.current.value} already exist`);
-			} else {
-				addBudget({
-					name: nameRef.current.value,
-					max: parseFloat(maxRef.current.value),
-				});
-				handleClose();
 			}
 		});
+
+		addBudget({
+			name: nameRef.current.value,
+			max: parseFloat(maxRef.current.value),
+		});
+
+		setShowWarning(false);
+		handleClose();
 	}
 
 	return (
@@ -55,6 +57,9 @@ export default function AddBudgetModal({ show, handleClose }) {
 								className="mb-3 sm:px-4 py-2 border-2 border-black rounded min-w-full"
 								required
 							/>
+							{textWarning && (
+								<p className="text-red-500">budget already exist</p>
+							)}
 							<label htmlFor="name" className="text-sm sm:text-base">
 								Max Expense
 							</label>

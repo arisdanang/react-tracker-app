@@ -13,6 +13,7 @@ function App() {
 	const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
 	const [showAddExpenseModal, setShowAddExpenseModal] = useState(false);
 	const [showViewExpensesModal, setShowViewExpensesModal] = useState(false);
+	const [showTextWarning, setShowTextWarning] = useState(false);
 	const [addExpenseBudgetId, setAddExpenseBudgetId] = useState();
 	const [viewExpenesModalBudgetId, setViewExpensesModalBudgetId] = useState();
 	const { budgets, getBudgetExpenses } = useBudgets();
@@ -55,6 +56,8 @@ function App() {
 						);
 					})}
 					<UncategorizedBudgetCard
+						name="Uncategorized"
+						buttons
 						onAddExpenseClick={() => openAddExpenseModal()}
 						onViewExpensesClick={() =>
 							openViewExpensesModal(UNCATEGORIZED_BUDGET_ID)
@@ -65,7 +68,11 @@ function App() {
 			</div>
 			<AddBudgetModal
 				show={showAddBudgetModal}
-				handleClose={() => setShowAddBudgetModal(false)}
+				textWarning={showTextWarning}
+				handleClose={() => {
+					setShowAddBudgetModal(false);
+					// setShowTextWarning(false);
+				}}
 			/>
 			<AddExpenseModal
 				defaultBudgetId={addExpenseBudgetId}
